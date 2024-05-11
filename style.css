@@ -1,0 +1,678 @@
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+html,
+body {
+    background: #fff;
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    overflow: hidden;
+}
+
+/* landing */
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    background: url(images/bg.webp) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.logo {
+    width: 350px;
+    margin-top: 10px;
+    margin-right: 15px;
+    justify-self: end;
+    align-self: center;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.wheel_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    flex: 1;
+}
+
+.wheel_container {
+    width: 75vh;
+    height: 75vh;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    margin-bottom: 100px;
+}
+
+.wheel_frame {
+    padding: 0 50px;
+    width: 100%;
+    height: 100%;
+    animation: rotate 3s infinite linear;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    10% {
+        transform: rotate(-2deg);
+    }
+
+    20% {
+        transform: rotate(-4deg);
+    }
+
+    30% {
+        transform: rotate(-6deg);
+    }
+
+    40% {
+        transform: rotate(-8deg);
+    }
+
+    50% {
+        transform: rotate(-10deg);
+    }
+
+    60% {
+        transform: rotate(-8deg);
+    }
+
+    70% {
+        transform: rotate(-6deg);
+    }
+
+    80% {
+        transform: rotate(-4deg);
+    }
+
+    90% {
+        transform: rotate(-2deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+.wheel {
+    width: 100%;
+    height: 100%;
+    background: url(images/wheel.webp) no-repeat;
+    background-size: contain;
+    background-position: center;
+    transition: 5s;
+}
+
+.btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    height: 20%;
+    background: url(images/btn.webp) no-repeat;
+    background-size: contain;
+    background-position: center;
+    cursor: pointer;
+    animation: scale 2s infinite;
+}
+
+.btn:hover {
+    background: url(images/btn_active.webp) no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1) translate(-50%, -50%);
+    }
+
+    50% {
+        transform: scale(1.05) translate(-47%, -47%);
+    }
+
+    100% {
+        transform: scale(1) translate(-50%, -50%);
+    }
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    width: 381px;
+    height: 55px;
+    border-radius: 100px;
+    background: #FF0137;
+    color: #FFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: 900;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.aviator {
+    position: absolute;
+    top: 0%;
+    left: -43%;
+    width: 55%;
+    height: 40%;
+}
+
+.cloud {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: url(images/cloud.webp) no-repeat;
+    background-position: bottom;
+    background-size: contain;
+}
+
+.plain {
+    position: absolute;
+    bottom: 10%;
+    right: -15%;
+    width: 100%;
+    height: 40%;
+    background: url(images/plane.webp) no-repeat;
+    background-position: right;
+    background-size: contain;
+}
+
+.money_img {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 100%;
+    background: url(images/money.webp) no-repeat;
+    background-position: bottom;
+    background-size: contain;
+}
+
+.aviator img {
+    width: 100%;
+}
+
+.modal_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background: rgba(2, 9, 27, 0.50);
+    opacity: 0;
+    transition: 0.5s;
+    display: none;
+    z-index: 4;
+}
+
+.modal_container.active {
+    display: flex;
+}
+
+.modal_container.active.opacity {
+    opacity: 1;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 26px;
+    background: #D9D9D9;
+    color: #000;
+    font-family: 'Inter', sans-serif;
+}
+
+.congratulation {
+    padding: 32px 135px;
+    color: #fff;
+    font-size: 48px;
+    background: #FF0137;
+    border-radius: 26px 26px 0 0;
+}
+
+.modal p:nth-child(2) {
+    text-align: center;
+    font-size: 54px;
+    margin: 35px 0 15px 0;
+}
+
+.modal p:nth-child(3) {
+    font-size: 40px;
+    margin: 0 0 35px 0;
+}
+
+.btns button {
+    padding: 13px 55px;
+    border-radius: 14px;
+    background: #FF0137;
+    color: #FFF;
+    font-family: 'Inter',sans-serif;
+    font-size: 32px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btns button:hover {
+    background: linear-gradient(180deg, #FF0137 0%, #000 100%);
+}
+
+.btns button:nth-child(2) {
+    display: none;
+}
+
+.btns button:nth-child(2).active {
+    display: block;
+}
+
+.btns button:nth-child(1).active {
+    display: none;
+}
+
+.wrapper.modificate2 .aviator {
+    width: 450px;
+    left: -60%;
+}
+
+@media screen and (max-width: 1600px) {
+    .wrapper.modificate1 .aviator {
+        width: 500px;
+        left: -85%;
+        top: -15%;
+    }
+
+    .wrapper.modificate2 .aviator {
+        width: 500px;
+        left: -50%;
+        top: -15%;
+    }
+
+    .wrapper.modificate1 .info {
+        width: 250px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .wrapper.modificate1 .logo {
+        width: 250px;
+    }
+
+    .wrapper.modificate1 .money_img {
+        width: 100%;
+        transform: scale(1.1);
+    }
+
+    .wrapper.modificate1 .plain {
+        right: -10%;
+        height: 60%;
+        bottom: 0;
+    }
+
+    .wrapper.modificate2 .plain {
+        right: -22%;
+        height: 50%;
+        bottom: 0%;
+    }
+
+    .wrapper.modificate3 .plain {
+        width: 80%;
+        bottom: 5%;
+    }
+
+    .wrapper.modificate3 .aviator {
+        width: 450px;
+        left: -35%;
+        top: -10%;
+    }
+
+    .wrapper.modificate1 .wheel_container {
+        width: 80vh;
+        height: 80vh;
+        bottom: 5%;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .wrapper.modificate2 .aviator {
+        width: 450px;
+        left: -57%;
+        top: -10%;
+    }
+
+    .wrapper.modificate2 .info {
+        width: 300px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .wrapper.modificate2 .logo {
+        width: 230px;
+    }
+
+    .wrapper.modificate3 .aviator {
+        width: 400px;
+        left: -45%;
+        top: -10%;
+    }
+
+    .wrapper.modificate3 .info {
+        width: 300px;
+        height: 45px;
+        font-size: 20px;
+    }
+
+    .wrapper.modificate3 .logo {
+        width: 270px;
+    }
+
+    .wrapper.modificate3 .plain {
+        right: -20%;
+        height: 45%;
+    }
+}
+
+@media screen and (max-width: 1025px) {
+
+    .wrapper.modificate4 {
+        background-position: center right;
+    }
+    .wrapper.modificate2 .aviator {
+        width: 350px;
+        left: -57%;
+    }
+
+    .wrapper.modificate3 .aviator {
+        width: 350px;
+        left: -37%;
+    }
+
+    .wrapper.modificate4 .wheel_container {
+        width: 55vh;
+        height: 55vh;
+        margin-bottom: 250px;
+    }
+
+    .wrapper.modificate4 .header {
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+    }
+
+    .wrapper.modificate4 .money_img {
+        width: 150%;
+    }
+
+    .wrapper.modificate4 .info {
+        order: 2;
+        width: 270px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .wrapper.modificate4 .logo {
+        margin: 0;
+    }
+
+    .wrapper.modificate4 .aviator {
+        width: 350px;
+        left: -15%;
+        top: -10%;
+    }
+    .wrapper.modificate4 .plain {
+        width: 100%;
+        height: 30%;
+        bottom: 0%;
+        right: -15%;
+    }
+
+    .wrapper.modificate2 .plain {
+        right: -15%;
+        bottom: 5%;
+    }
+
+    .wrapper.modificate3 .plain {
+        right: -25%;
+    }
+
+    .wrapper.modificate2 .wheel_container {
+        width: 80vh;
+        height: 80vh;
+        bottom: 5%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .wrapper.modificate4 .aviator {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .wrapper.modificate4 .info {
+        width: 250px;
+        height: 35px;
+        font-size: 16px;
+    }
+
+    .wrapper.modificate4 .logo {
+        width: 250px;
+    }
+
+    .wrapper.modificate4 .wheel_container {
+        margin-bottom: 150px;
+    }
+
+    .wrapper.modificate4 .aviator {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper.modificate4 .info {
+        width: 180px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .wrapper.modificate4 .logo {
+        width: 200px;
+    }
+
+    .wrapper.modificate4 .aviator {
+        width: 200px;
+    }
+
+    .wrapper.modificate4 .plain {
+        width: 100%;
+        height: 30%;
+        bottom: 5%;
+        right: -15%;
+    }
+}
+
+
+@media screen and (max-width: 500px) { 
+    .wrapper.modificate4 .info {
+        width: 150px;
+        height: 27px;
+        font-size: 12px;
+    }
+
+    .wrapper.modificate4 .aviator {
+        width: 180px;
+        left: -2%;
+        top: -5%;
+    }
+
+    .wrapper.modificate4 .plain {
+        width: 120%;
+        height: 50%;
+        bottom: -5%;
+        right: -15%;
+    }
+
+    .wrapper.modificate4 .cloud {
+        transform: scale(2);
+        bottom: 50%;
+    }
+
+    .wrapper.modificate4 .money_img {
+        transform: scale(1.5);
+        bottom: 25%;
+    }
+
+
+    .wrapper.modificate4 .wheel_wrapper {
+        display: block;
+    }
+
+    .wrapper.modificate4 .wheel_container {
+        margin-bottom: 10px;
+    }
+
+    .wrapper.modificate4 .wheel_frame {
+        margin-top: 20px;
+    }
+    
+    .wrapper.modificate4 .congratulation {
+        padding: 20px 80px;
+        font-size: 20px;
+    }
+
+    .wrapper.modificate4 .modal p:nth-child(2) {
+        font-size: 30px;
+        margin: 15px 0 7px 0;
+    }
+    
+    .wrapper.modificate4 .modal p:nth-child(3) {
+        font-size: 24px;
+        margin: 0 0 12px 0;
+    }
+    
+    .wrapper.modificate4 .btns button {
+        padding: 10px 50px;
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 451px) and (max-height: 932px) {
+    .wrapper.modificate4 .wheel_frame {
+        padding: 0 20px;
+        margin-top: 50px;
+    }
+
+    .wrapper.modificate4 .wheel_container {
+        width: 45vh;
+        height: 45vh;
+        /* margin-bottom: 100px; */
+        bottom: -5%;
+    }
+
+    .wrapper.modificate4 .aviator {
+        top: -20%;
+        left: -5%;
+        width: 210px;
+    }
+
+    .wrapper.modificate4 .plain {
+        width: 130%;
+        height: 50%;
+        bottom: -5%;
+        right: -15%;
+    }
+}
+
+@media screen and (max-width: 412px) and (max-height: 732px) {
+    .wrapper.modificate4 .wheel_frame {
+        margin-top: 20px;
+    }
+
+    .wrapper.modificate4 .aviator {
+        top: -15%;
+        left: -13%;
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 376px) and (max-height: 668px) {
+    .wrapper.modificate4 .info {
+        width: 120px;
+        height: 20px;
+        font-size: 10px;
+    }
+
+    .wrapper.modificate4 .logo {
+        width: 150px;
+    }
+
+    .wrapper.modificate4 .aviator {
+        top: -17%;
+        left: -5%;
+        width: 150px;
+    }
+
+    .wrapper.modificate4 .wheel_container {
+        width: 50vh;
+        height: 50vh;
+        /* margin-bottom: 100px; */
+        bottom: -5%;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .wrapper.modificate4 .congratulation {
+        padding: 15px 70px;
+    }
+}
